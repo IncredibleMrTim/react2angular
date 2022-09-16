@@ -356,6 +356,7 @@ describe('react2angular', () => {
 
     it('should take injections, which override props', () => {
       spyOn($http, 'get').and.returnValue(
+        // @ts-ignore: unknown type error
         $q.resolve({ data: '$http response' })
       )
       const scope = Object.assign($rootScope.$new(true), {
