@@ -2,7 +2,6 @@ import { IAugmentedJQuery, IComponentOptions } from 'angular'
 import fromPairs = require('lodash.frompairs')
 import NgComponent from 'ngcomponent'
 import * as React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
 import { createRoot, Root } from 'react-dom/client'
 
 /**
