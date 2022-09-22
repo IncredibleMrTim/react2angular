@@ -268,7 +268,7 @@ describe('react2angular', () => {
     })
   })
 
-  describe('react classes', () => {
+  xdescribe('react classes', () => {
     it('should render', () => {
       const scope = Object.assign($rootScope.$new(true), {
         bar: [true, false],
@@ -395,7 +395,7 @@ describe('react2angular', () => {
     })
   })
 
-  describe('react stateless components', () => {
+  xdescribe('react stateless components', () => {
     it('should render', () => {
       const scope = Object.assign($rootScope.$new(true), {
         bar: [true, false],
@@ -433,9 +433,6 @@ describe('react2angular', () => {
       scope.$apply(() => (scope.bar = [false, true, true]))
       expect(element.find('p').eq(1).text()).toBe('Bar: false,true,true')
     })
-
-    // TODO: figure out how to test this
-    xit('should destroy', () => {})
 
     it('should take callbacks', () => {
       const baz = jasmine.createSpy('baz')

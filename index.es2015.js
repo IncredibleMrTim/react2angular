@@ -41,7 +41,9 @@ function react2angular(Class, bindingNames = null, injectNames = []) {
                 }
                 render() {
                     if (!this.isDestroyed) {
-                        root = client_1.createRoot(this.$element[0]);
+                        if (!root) {
+                            root = client_1.createRoot(this.$element[0]);
+                        }
                         root.render(React.createElement(Class, Object.assign({}, this.props, this.injectedProps)));
                     }
                 }
@@ -50,7 +52,6 @@ function react2angular(Class, bindingNames = null, injectNames = []) {
                     if (root) {
                         root.unmount();
                     }
-                    // unmountComponentAtNode(this.$element[0])
                 }
             }
         ]

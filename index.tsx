@@ -64,7 +64,7 @@ export function react2angular<Props>(
             root.unmount()
           }
         }
-      },
-    ],
+      }
+    ]
   }
 }
