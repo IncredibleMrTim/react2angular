@@ -50,7 +50,9 @@ export function react2angular<Props>(
 
         render() {
           if (!this.isDestroyed) {
-            root = createRoot(this.$element[0])
+            if (!root) {
+              root = createRoot(this.$element[0])
+            }
             root.render(
               <Class {...this.props} {...(this.injectedProps as any)} />
             )
@@ -61,9 +63,8 @@ export function react2angular<Props>(
           if (root) {
             root.unmount()
           }
-          // unmountComponentAtNode(this.$element[0])
         }
-      }
-    ]
+      },
+    ],
   }
 }
